@@ -12,7 +12,7 @@
 //   'Kenya'
 // ]
 
-const webTechs = [
+export const webTechs = [
   'HTML',
   'CSS',
   'JavaScript',
@@ -22,7 +22,7 @@ const webTechs = [
   'MongoDB'
 ]
 
-const mernStack = ['MongoDB', 'Express', 'React', 'Node']
+export const mernStack = ['MongoDB', 'Express', 'React', 'Node']
 
 // exercise 1. Develop a small script which generate any number of characters random id:
 let randomCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
@@ -53,7 +53,7 @@ for(let i = 0; i < countries.length; i++) {
 console.log(strLength)
 
 // exercise 6. Use the countries array to create the following array of arrays:
-const countries = [
+export const countries = [
   'Albania',
   'Bolivia',
   'Canada',
