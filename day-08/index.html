@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const products = [
+  {
+    _id: 'eedfcf',
+    name: 'mobile phone',
+    description: 'Huawei Honor',
+    price: 200,
+    ratings: [
+      { userId: 'fg12cy', rate: 5 },
+      { userId: 'zwf8md', rate: 4.5 }
+    ],
+    likes: []
+  },
+  {
+    _id: 'aegfal',
+    name: 'Laptop',
+    description: 'MacPro: System Darwin',
+    price: 2500,
+    ratings: [],
+    likes: ['fg12cy']
+  },
+  {
+    _id: 'hedfcg',
+    name: 'TV',
+    description: 'Smart TV:Procaster',
+    price: 400,
+    ratings: [{ userId: 'fg12cy', rate: 5 }],
+    likes: ['fg12cy']
+  }
+]
+    
+    function likeProduct(productsArray, productId, userId) {
+      let foundProduct;
+      let updatedLikeStatus;
+
+      for(let i = 0; i < productsArray.length; i++) {
+        if(productsArray[i]._id === productId) {
+          foundProduct = productsArray[i]
+        }
+      }
+
+      if(!foundProduct) {
+        updatedLikeStatus = 'Product not found'
+      } else {
+        for (let i = 0; i < foundProduct.likes.length; i++) {
+          if(foundProduct.likes[i] === userId) {
+            updatedLikeStatus = foundProduct.likes.splice()
+          } else {
+            updatedLikeStatus = foundProduct.likes.push(userId)
+          }
+        }
+      }
+      return updatedLikeStatus
+    }
+    console.log(likeProduct(products, 'eedfcf', 'eedfcf'))
+  </script>
+</body>
+</html>
